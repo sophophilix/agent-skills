@@ -1,0 +1,35 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  skills:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Each SKILL.md names its own folder and has a description
+        run: |
+          status=0
+          for f in plugins/*/skills/*/SKILL.md; do
+            dir=$(basename "$(dirname "$f")")
+            head -1 "$f" | grep -qx -- '---' || { echo "$f: no front matter"; status=1; }
+            grep -qx "name: $dir" "$f" || { echo "$f: name is not $dir"; status=1; }
+            grep -q '^description:' "$f" || { echo "$f: no description"; status=1; }
+          done
+          exit $status
+      - name: Manifests are valid JSON
+        run: |
+          for f in .claude-plugin/marketplace.json plugins/*/.claude-plugin/plugin.json; do
+            python -m json.tool "$f" > /dev/null || { echo "$f: invalid JSON"; exit 1; }
+          done
+      - name: ste-lint self-test
+        run: python -I plugins/writing/skills/technical-writing/scripts/ste-lint.py --selftest

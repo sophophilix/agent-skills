@@ -1,0 +1,8 @@
+{
+  "name": "architecture",
+  "version": "1.0.0",
+  "description": "Enterprise solution design documents, reference architectures and ADRs",
+  "author": { "name": "sophophilix" },
+  "repository": "https://github.com/sophophilix/agent-skills",
+  "license": "MIT"
+}

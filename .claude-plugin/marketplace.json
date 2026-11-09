@@ -1,0 +1,22 @@
+{
+  "name": "agent-skills",
+  "description": "Skills for technical writing, Python engineering and solution architecture",
+  "owner": { "name": "sophophilix" },
+  "plugins": [
+    {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "description": "Technical writing standard, short-sentence rules for procedures, and the humanizer pass"
+    },
+    {
+      "name": "python",
+      "source": "./plugins/python",
+      "description": "Python standards, style, testing, architecture and review"
+    },
+    {
+      "name": "architecture",
+      "source": "./plugins/architecture",
+      "description": "Enterprise solution design documents, reference architectures and ADRs"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "python",
+  "version": "1.0.0",
+  "description": "Python standards, style, testing, architecture and review",
+  "author": { "name": "sophophilix" },
+  "repository": "https://github.com/sophophilix/agent-skills",
+  "license": "MIT"
+}

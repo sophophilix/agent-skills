@@ -1,0 +1,8 @@
+{
+  "name": "writing",
+  "version": "1.0.0",
+  "description": "Technical writing standard, short-sentence rules for procedures, and the humanizer pass",
+  "author": { "name": "sophophilix" },
+  "repository": "https://github.com/sophophilix/agent-skills",
+  "license": "MIT"
+}
